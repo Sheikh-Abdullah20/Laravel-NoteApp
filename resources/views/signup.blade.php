@@ -54,4 +54,5 @@
                             <p>Already have an account? <a href="{{route('signin')}}">Sign In</a></p>
                         </div>
 
- 
+              @endsection
+                           

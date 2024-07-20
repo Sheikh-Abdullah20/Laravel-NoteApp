@@ -492,9 +492,10 @@ tabindex="0">
 <!-- Demo content-->
 <div class="container p-0">
 
-    @if(session()->has('signupSuccess'))
+    @if(session()->has('signupSuccess') || session()->has('logout'))
     <div class="alert alert-success text-dark">
         {{session('signupSuccess')}}
+        {{session('logout')}}
     </div>
     @endif
 
@@ -537,4 +538,4 @@ tabindex="0">
 
 </body>
 
-<
+</html>

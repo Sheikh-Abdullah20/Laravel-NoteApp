@@ -9189,6 +9189,7 @@ a, button {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+
 }
 
 @media (min-width: 992px) {
@@ -10981,7 +10982,7 @@ img {
 .app-header {
   max-width: 100%;
   z-index: 100;
-  position: fixed;
+  position: relative;
   inset-block-start: 0;
   inset-inline: 0;
   background: var(--header-bg);

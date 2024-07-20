@@ -12,25 +12,19 @@
                         @csrf
                         <div class="form-group mb-3">
                             <label class="form-label">Email</label> <input class="form-control"
-                                placeholder="Enter your email" type="text" name="email">
-                                {{-- <span class="text-danger">
+                                placeholder="Enter your email" type="text" name="email" value='{{old('email')}}'>
+                                <span class="text-danger">
                                     @if($errors->has('email'))
                                     @error('email')
                                     {{$message}}
                                     @enderror
                                     @endif
-                                 </span> --}}
+                                 </span>
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Password</label> <input class="form-control"
                                 placeholder="Enter your password" type="password" name="password">
-                                {{-- <span class="text-danger">
-                                    @if($errors->has('password'))
-                                    @error('password')
-                                    {{$message}}
-                                    @enderror
-                                    @endif
-                                 </span> --}}
+                                
                         </div>
                         <button type="submit"  class="btn btn-dark btn-outline-info btn-block w-100" name="signin">Sign-In</button>
                         
@@ -40,4 +34,5 @@
                                 Account</a></p>
                     </div>
             
-
+
+         @endsection

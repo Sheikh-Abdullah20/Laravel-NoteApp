@@ -167,6 +167,11 @@ typography
 /*white set*/
 /*black set*/
 /* dark mode */
+
+body{
+  background-color: white !important;
+
+}
 [data-theme-mode=dark] {
   --body-bg-rgb:	25, 32, 47;
   --body-bg-rgb2:	36, 43, 57;

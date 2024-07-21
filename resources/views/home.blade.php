@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
     data-menu-styles="light" data-toggled="close">
+
 <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
@@ -52,122 +53,126 @@
 
 <body>
 
-    
+
     {{-- header --}}
     @include('header')
     {{-- header --}}
 
-<div class="container-fluid" style="margin-top: 4rem">
-    @if(session()->has('added') || session()->has('welcome') )
-<div class="alert alert-success text-dark">
-    {{session('added')}}
-    {{session('welcome')}}
-</div>
-@endif
+    @section('profile')
+    {{$users->profile}}
+    @endsection
+
+    <div class="container-fluid" style="margin-top: 4rem">
+        @if(session()->has('added') || session()->has('welcome') )
+        <div class="alert alert-success text-dark">
+            {{session('added')}}
+            {{session('welcome')}}
+        </div>
+        @endif
 
 
-@if(session()->has('updated') || session()->has('deleted'))
-<div class="alert alert-warning text-dark">
-    {{session('updated')}}
-    {{session('deleted')}}
-</div>
-@endif
-</div>
-        <div class="container">
-            <div class="row text-center" style="margin-top: 5rem">
-                <h4>Add-Note</h4>
-            </div>
+        @if(session()->has('updated') || session()->has('deleted'))
+        <div class="alert alert-warning text-dark">
+            {{session('updated')}}
+            {{session('deleted')}}
+        </div>
+        @endif
+    </div>
+    <div class="container">
+        <div class="row text-center" style="margin-top: 5rem">
+            <h1 class="display-2">Add-Note</h1>
+        </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <form action="{{route('addnote')}}" method="POST">
-                        @csrf
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{{route('addnote')}}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" id="title" placeholder="Enter Title Here" name="title">
                         <span class="text-danger">
-                        @error('title')
+                            @error('title')
                             {{$message}}
-                        @enderror    
+                            @enderror
                         </span>
-                      </div>
-                      <div class="mb-3">
+                    </div>
+                    <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" id="description" rows="5" name="description"></textarea>
                         <span class="text-danger">
                             @error('description')
-                                {{$message}}
-                            @enderror    
-                            </span>
-                      </div>
-                      <button type="submit" class="btn btn-dark ">Add Note</button>
-                    </form>
+                            {{$message}}
+                            @enderror
+                        </span>
+                    </div>
+                    <button type="submit" class="btn btn-dark ">Add Note</button>
+                </form>
             </div>
-            
-            
+
+
             {{-- fetching notes --}}
-           
+
             <div class="row my-5 ">
                 @foreach ( $notes as $note )
-                    
-            
+
+
                 <div class="col-md-6">
                     <div class="card mb-3">
                         <div class="card-body">
-                          <h5 class="card-title">{{$note->title}}</h5>
-                          <p class="card-text">{{$note->description}}</p>
-                          <a href="{{route('editnote' , $note->id)}}" class="btn btn-dark">Edit</a>
-                          <a href="{{route('deletenote',$note->id)}}" class="btn btn-danger">Delete</a>
+                            <h5 class="card-title">{{$note->title}}</h5>
+                            <p class="card-text">{{$note->description}}</p>
+                            <a href="{{route('editnote' , $note->id)}}" class="btn btn-dark">Edit</a>
+                            <a href="{{route('deletenote',$note->id)}}" class="btn btn-danger">Delete</a>
                         </div>
-                      </div>  
                     </div>
-                    @endforeach
+                </div>
+                @endforeach
             </div>
         </div>
 </body>
 
 
-    <!-- Popper JS -->
-    <script src="libs/@popperjs/core/umd/popper.min.js"></script>
-    
-    <!-- Bootstrap JS -->
-    <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Defaultmenu JS -->
-    <script src="js/defaultmenu.min.js"></script>
-    
-    <!-- Node Waves JS-->
-    <script src="libs/node-waves/waves.min.js"></script>
-    
-    <!-- Sticky JS -->
-    <script src="js/sticky.js"></script>
-    
-    <!-- Simplebar JS -->
-    <script src="libs/simplebar/simplebar.min.js"></script>
-    <script src="js/simplebar.js"></script>
-    
-    <!-- Color Picker JS -->
-    <script src="libs/@simonwep/pickr/pickr.es5.min.js"></script>
-    
-    
-    <!-- Apex Charts JS -->
-    <script src="libs/apexcharts/apexcharts.min.js"></script>
-    
-    <!-- JSVector Maps JS -->
-    <script src="libs/jsvectormap/js/jsvectormap.min.js"></script>
-    
-    <!-- JSVector Maps MapsJS -->
-    <script src="libs/jsvectormap/maps/world-merc.js"></script>
-    <script src="js/us-merc-en.js"></script>
-    
-    <!-- Chartjs Chart JS -->
-    <script src="js/index.js"></script>
-    
-    
-    <!-- Custom-Switcher JS -->
-    <script src="js/custom-switcher.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
-    
-    
-    </html>
+<!-- Popper JS -->
+<script src="libs/@popperjs/core/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Defaultmenu JS -->
+<script src="js/defaultmenu.min.js"></script>
+
+<!-- Node Waves JS-->
+<script src="libs/node-waves/waves.min.js"></script>
+
+<!-- Sticky JS -->
+<script src="js/sticky.js"></script>
+
+<!-- Simplebar JS -->
+<script src="libs/simplebar/simplebar.min.js"></script>
+<script src="js/simplebar.js"></script>
+
+<!-- Color Picker JS -->
+<script src="libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+<!-- Apex Charts JS -->
+<script src="libs/apexcharts/apexcharts.min.js"></script>
+
+<!-- JSVector Maps JS -->
+<script src="libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+<!-- JSVector Maps MapsJS -->
+<script src="libs/jsvectormap/maps/world-merc.js"></script>
+<script src="js/us-merc-en.js"></script>
+
+<!-- Chartjs Chart JS -->
+<script src="js/index.js"></script>
+
+
+<!-- Custom-Switcher JS -->
+<script src="js/custom-switcher.min.js"></script>
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
+
+
+</html>

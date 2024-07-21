@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users',function(Blueprint $table){
-            $table->longText('profile')->nullable()->after('password');
-
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('address')->nullable()->default('Enter Your Address')->after('profile');
         });
     }
 
@@ -22,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users',function(Blueprint $table){
-            $table->dropColumn('profile');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('address');
         });
     }
 };

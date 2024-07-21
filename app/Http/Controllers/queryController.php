@@ -12,6 +12,11 @@ class queryController extends Controller
     // AS All ways Homee
     public function home()
     {
+
+        if(!session()->has('id')){
+            return redirect()->route('signin');
+        }
+
         $id = session('id');
         $email = session('email');
         $notes = Note::where('user_id', $id)->get();
@@ -84,6 +89,7 @@ class queryController extends Controller
     }
     public function addnote(Request $req)
     {
+
         $req->validate([
             'title' => 'required|min:3',
             'description' => 'required|min:5',
@@ -94,15 +100,20 @@ class queryController extends Controller
             'user_id' => session('id'),
         ]);
         if ($note) {
-            return redirect()->route('home')->with('added', "Note Has Been Added");
+            return redirect()->route('home')->with('added', session('name')." Your Note Has Been Added");
         }
     }
 
     // Editing Note
     public function editnote(Request $req, $id)
     {
+        if(!session()->has('id')){
+            return redirect()->route('signin');
+        }
+        $email = session('email');
         $note = Note::find($id);
-        return view('editnote', compact('note'));
+        $users = User::where('email', $email)->first();
+        return view('editnote', compact('note','users'));
 
     }
     public function updatenote(Request $req, string $id)
@@ -119,6 +130,10 @@ class queryController extends Controller
 // Deleting Note
     public function deletenote($id)
     {
+        if(!session()->has('id')){
+            return redirect()->route('signin');
+        }
+
         $Note = Note::where('id', $id)->delete();
 
         if ($Note) {
@@ -131,6 +146,9 @@ class queryController extends Controller
     // Profile
     public function profile()
     {
+        if(!session()->has('id')){
+            return redirect()->route('signin');
+        }
         $email = session('email');
         $users = User::where('email', $email)->first();
         // return $user;
@@ -142,6 +160,9 @@ class queryController extends Controller
 
     public function editprofile()
     {
+        if(!session()->has('id')){
+            return redirect()->route('signin');
+        }
         $email = session('email');
         $users = User::where('email', $email)->first();
         return view('updateprofile', compact('users'));
@@ -169,7 +190,7 @@ class queryController extends Controller
                 'contact' => $req->contact,
                 'profile' => $req->file('profile')->getClientOriginalName(),
             ]);
-            return redirect()->route('profile')->with('profile', session('name') . ' Your  Has Been Profile Updated');
+            return redirect()->route('profile')->with('profile', session('name') . ' Your  Profile  Has Been Updated');
         } else {
             $user->update([
                 'name' => $req->name,

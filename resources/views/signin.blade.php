@@ -1,5 +1,7 @@
  @extends('auth_layout')
-
+ @section('auth')
+ Website - SignIn
+ @endsection
  @section('content')
     
 

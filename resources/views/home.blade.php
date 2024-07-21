@@ -62,7 +62,7 @@
     {{$users->profile}}
     @endsection
 
-    <div class="container-fluid" style="margin-top: 4rem">
+    <div class="container-fluid" style="margin-top: 4rem; height:10rem">
         @if(session()->has('added') || session()->has('welcome') )
         <div class="alert alert-success text-dark">
             {{session('added')}}

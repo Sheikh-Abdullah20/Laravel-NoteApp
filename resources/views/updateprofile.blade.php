@@ -165,7 +165,7 @@ content="admin dashboard template,admin panel html,bootstrap dashboard,admin das
             <div class="col-md-3">
             </div>
             <div class="col-md-12">
-                <input type="number" class="form-control" placeholder='Contact Number' name="contact"
+                <input type="text" class="form-control" placeholder='Contact Number' name="contact"
                 value="{{$users->contact}}" >
             </div>
         </div>

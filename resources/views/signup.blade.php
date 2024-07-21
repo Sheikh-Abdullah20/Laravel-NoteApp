@@ -1,5 +1,7 @@
 @extends('auth_layout')
-
+@section('auth')
+Website - SignUp
+@endsection
 @section('content')
    
                 <div class="card-sigin">

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Website - @yield('title')</title>
+    <title> Website - EditNote</title>
     <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
     <meta name="Author" content="Spruko Technologies Private Limited">
     <meta name="keywords"
@@ -57,7 +57,7 @@
    {{-- header --}}
         <div class="container my-5 ">
             <div class="row text-center">
-                <h4>Update Note</h4>
+                <h1 class="display-2">Update Note</h1>
             </div>
 
             <div class="row">
@@ -83,46 +83,46 @@
 
 
     <!-- Popper JS -->
-    <script src="libs/@popperjs/core/umd/popper.min.js"></script>
+    <script src="/libs/@popperjs/core/umd/popper.min.js"></script>
     
     <!-- Bootstrap JS -->
-    <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     
     <!-- Defaultmenu JS -->
-    <script src="js/defaultmenu.min.js"></script>
+    <script src="/js/defaultmenu.min.js"></script>
     
     <!-- Node Waves JS-->
-    <script src="libs/node-waves/waves.min.js"></script>
+    <script src="/libs/node-waves/waves.min.js"></script>
     
     <!-- Sticky JS -->
-    <script src="js/sticky.js"></script>
+    <script src="/js/sticky.js"></script>
     
     <!-- Simplebar JS -->
-    <script src="libs/simplebar/simplebar.min.js"></script>
-    <script src="js/simplebar.js"></script>
+    <script src="/libs/simplebar/simplebar.min.js"></script>
+    <script src="/js/simplebar.js"></script>
     
     <!-- Color Picker JS -->
-    <script src="libs/@simonwep/pickr/pickr.es5.min.js"></script>
+    <script src="/libs/@simonwep/pickr/pickr.es5.min.js"></script>
     
     
     <!-- Apex Charts JS -->
-    <script src="libs/apexcharts/apexcharts.min.js"></script>
+    <script src="/libs/apexcharts/apexcharts.min.js"></script>
     
     <!-- JSVector Maps JS -->
-    <script src="libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/libs/jsvectormap/js/jsvectormap.min.js"></script>
     
     <!-- JSVector Maps MapsJS -->
-    <script src="libs/jsvectormap/maps/world-merc.js"></script>
-    <script src="js/us-merc-en.js"></script>
+    <script src="/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="/js/us-merc-en.js"></script>
     
     <!-- Chartjs Chart JS -->
-    <script src="js/index.js"></script>
+    <script src="/js/index.js"></script>
     
     
     <!-- Custom-Switcher JS -->
-    <script src="js/custom-switcher.min.js"></script>
+    <script src="/js/custom-switcher.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script src="/js/custom.js"></script>
     
     
     </html>

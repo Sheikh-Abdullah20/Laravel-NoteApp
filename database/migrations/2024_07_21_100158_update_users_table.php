@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('twitter')->nullable()->default('Place Your Twitter URL ')->after('profile');
             $table->string('linkedin')->nullable()->default('Place Your Linkedin URL ')->after('profile');
             $table->string('portfolio')->nullable()->default('Place Your Portfolio URL ')->after('profile');
-            $table->string('contact')->nullable()->default('Enter Your Phone Number ')->after('profile');
+            $table->string('contact')->nullable()->default('Enter Your Phone Number')->after('profile');
+
         });
     }
 

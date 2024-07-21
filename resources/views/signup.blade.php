@@ -46,7 +46,7 @@
                                     </span>
                             </div>
 
-                            <button type="submit"  class="btn btn-dark btn-outline-info btn-block w-100" value="Create Account" name="signup">Create Account</button>
+                            <button type="submit"  class="btn btn-dark  btn-block w-100" value="Create Account" name="signup">Create Account</button>
                             
                         </form>
 

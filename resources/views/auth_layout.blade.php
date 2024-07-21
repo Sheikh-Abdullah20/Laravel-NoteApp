@@ -504,8 +504,6 @@ tabindex="0">
         <div class="card-sigin">
             <div class="mb-5 d-flex">
                 <a href="index.php" class="header-logo"><h1>My-Note</h1>
-                    <img src="images/brand-logos/desktop-white.png"
-                    class="desktop-white ht-40" alt="logo">
                 </a>
             </div>
 

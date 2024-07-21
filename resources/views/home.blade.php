@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
     data-menu-styles="light" data-toggled="close">
-
 <head>
-
     <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Website - @yield('title')</title>
+    <title> Website - home</title>
     <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
     <meta name="Author" content="Spruko Technologies Private Limited">
     <meta name="keywords"
@@ -60,13 +58,21 @@
     {{-- header --}}
 
 
-@if(session()->has('updated'))
-<div class="alert alert-warning text-dark">
-    {{session('updated')}}
+    @if(session()->has('added') || session()->has('added'))
+<div class="alert alert-success text-dark">
+    {{session('added')}}
 </div>
 @endif
-        <div class="container my-5 ">
-            <div class="row text-center">
+
+
+@if(session()->has('updated') || session()->has('deleted'))
+<div class="alert alert-warning text-dark">
+    {{session('updated')}}
+    {{session('deleted')}}
+</div>
+@endif
+        <div class="container">
+            <div class="row text-center" style="margin-top: 5rem">
                 <h4>Add-Note</h4>
             </div>
 
@@ -109,7 +115,7 @@
                           <h5 class="card-title">{{$note->title}}</h5>
                           <p class="card-text">{{$note->description}}</p>
                           <a href="{{route('editnote' , $note->id)}}" class="btn btn-dark">Edit</a>
-                          <a href="#" class="btn btn-danger">Delete</a>
+                          <a href="{{route('deletenote',$note->id)}}" class="btn btn-danger">Delete</a>
                         </div>
                       </div>  
                     </div>

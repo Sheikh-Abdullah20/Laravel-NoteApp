@@ -5,7 +5,7 @@
 
             <div class="card-sigin">
                 <div class="main-signup-header">
-                    <h3>Welcome back!</h3>
+                    <h3 class="text-dark">Welcome back!</h3>
                     <h6 class="fw-medium mb-4 fs-17">Please sign in to continue.</h6>
 
                     <form action="{{route('finduser')}}" method="POST">
@@ -26,7 +26,7 @@
                                 placeholder="Enter your password" type="password" name="password">
                                 
                         </div>
-                        <button type="submit"  class="btn btn-dark btn-outline-info btn-block w-100" name="signin">Sign-In</button>
+                        <button type="submit"  class="btn btn-dark btn-block w-100" name="signin">Sign-In</button>
                         
                     </form>
                     <div class="main-signin-footer mt-5">

@@ -78,7 +78,7 @@ class queryController extends Controller
            'user_id' => session('id'),
         ]);
         if($note){
-            return redirect()->route('home');
+            return redirect()->route('home')->with('added',"Note Has Been Added");
         }
     }
 
@@ -99,6 +99,15 @@ class queryController extends Controller
     }
 
 
+    public function deletenote($id){
+        $Note = Note::where('id',$id)->delete();
+
+        if($Note){
+            return redirect()->route('home')->with('deleted','Note Has Been Deleted');
+        }else{
+            return "Note Not Deleted";
+        }
+    }
 
     
 }

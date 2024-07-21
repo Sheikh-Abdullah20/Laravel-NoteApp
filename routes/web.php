@@ -12,3 +12,4 @@ Route::get('/signout',[queryController::class,'signout'])->name('signout');
 Route::post('/addnote',[queryController::class,'addnote'])->name('addnote');
 Route::get('/editnote/{id}',[queryController::class,'editnote'])->name('editnote');
 Route::post('/updatenote/{id}',[queryController::class,'updatenote'])->name('updatenote');
+Route::get('/deletenote/{id}',[queryController::class,'deletenote'])->name('deletenote');

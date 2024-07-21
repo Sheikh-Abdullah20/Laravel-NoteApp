@@ -492,12 +492,7 @@ tabindex="0">
 <!-- Demo content-->
 <div class="container p-0">
 
-    @if(session()->has('signupSuccess') || session()->has('logout'))
-    <div class="alert alert-success text-dark">
-        {{session('signupSuccess')}}
-        {{session('logout')}}
-    </div>
-    @endif
+
 
 <div class="row">
     <div class="col-md-10 col-lg-10 col-xl-9 mx-auto">

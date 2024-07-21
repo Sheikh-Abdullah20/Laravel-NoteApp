@@ -543,7 +543,7 @@
                     <!-- Start::header-link|dropdown-toggle -->
                     <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                        <img src="/images/faces/6.jpg" alt="img" width="37" height="37" class="rounded-circle">
+                        <img src="/images/faces/{{$user->profile}}" alt="img" width="37" height="37" class="rounded-circle">
                     </a>
                     <!-- End::header-link|dropdown-toggle -->
                     <ul class="main-header-dropdown dropdown-menu pt-0 header-profile-dropdown dropdown-menu-end main-profile-menu"
@@ -556,9 +556,9 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="dropdown-item d-flex" href="#"><i
+                        <li><a class="dropdown-item d-flex" href="{{route('profile')}}"><i
                                     class="bx bx-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
-                        <li><a class="dropdown-item d-flex" href=""><i class="bx bx-cog fs-18 me-2 op-7"></i>Edit
+                        <li><a class="dropdown-item d-flex" href="{{route('editprofile')}}"><i class="bx bx-cog fs-18 me-2 op-7"></i>Edit
                                 Profile </a></li>
                         <li><a class="dropdown-item d-flex" href="{{route('signout')}}"><i
                                     class="bx bx-log-out fs-18 me-2 op-7"></i>Sign Out</a></li>

@@ -50,14 +50,14 @@ class queryController extends Controller
            session()->put('id',$user->id);
            session()->put('name',$user->name);
            session()->put('email',$user->email);
-            return redirect()->route('home')->with('welcome','Welcome Back'. session('name'));
+            return redirect()->route('home')->with('welcome','Welcome Back '. session('name'));
             exit();
            }else{
-            echo "Password Do Not Matched";
+            return redirect()->route('signin')->with('passwordError',"Password Do Not Match");
             exit();
            }
         }else{
-           echo "User Not Found";
+            return redirect()->route('signin')->with('notFound',"User Not Found");
             exit();
         }
         
@@ -109,5 +109,54 @@ class queryController extends Controller
         }
     }
 
+
+    public function profile(){
+        $email = session('email');
+        $user = User::where('email',$email)->first();
+        // return $user;
+
+        return view('profile',compact('user'));
+    }
+
+
+   
+
+
+    public function editprofile(){
+        $email = session('email');
+        $user = User::where('email',$email)->first();
+        return view('updateprofile',compact('user'));
+    }
     
+
+    public function updateprofile(Request $req){
+
+        $req->validate([
+            'profile' =>"mimes:png,jpg,jpeg",
+        ]);
+
+        $email =  session('email');
+        $user  = User::where('email',$email)->first();
+        
+
+         if($req->file('profile')){
+            $orignal =  $req->file('profile')->getClientOriginalName();
+            $req->file('profile')->move('images/faces/',$user->profile);
+            $user->update([
+               'name' => $req->name,
+               'email' => $req->email,
+               'profile' => $orignal,
+              
+            ]);
+            return redirect()->route('profile')->with('profile','Profile Updated');
+         }
+         else{
+            $user->update([
+                'name' => $req->name,
+                'email' => $req->email,
+               
+             ]);
+             return redirect()->route('profile')->with('profile','Profile Updated');
+         }
+    }
 }

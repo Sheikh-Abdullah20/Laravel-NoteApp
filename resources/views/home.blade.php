@@ -57,10 +57,11 @@
     @include('header')
     {{-- header --}}
 
-
-    @if(session()->has('added') || session()->has('added'))
+<div class="container-fluid" style="margin-top: 4rem">
+    @if(session()->has('added') || session()->has('welcome') )
 <div class="alert alert-success text-dark">
     {{session('added')}}
+    {{session('welcome')}}
 </div>
 @endif
 
@@ -71,6 +72,7 @@
     {{session('deleted')}}
 </div>
 @endif
+</div>
         <div class="container">
             <div class="row text-center" style="margin-top: 5rem">
                 <h4>Add-Note</h4>

@@ -3,6 +3,20 @@
  @section('content')
     
 
+ @if(session()->has('signupSuccess') || session()->has('logout'))
+ <div class="alert alert-success text-dark">
+     {{session('signupSuccess')}}
+     {{session('logout')}}
+ </div>
+ @endif
+
+    @if(session()->has("passwordError") || session()->has("notFound"))
+    <div class="alert alert-danger">
+        {{session('passwordError')}}
+        {{session('notFound')}}
+    </div>
+    @endif
+
             <div class="card-sigin">
                 <div class="main-signup-header">
                     <h3 class="text-dark">Welcome back!</h3>
